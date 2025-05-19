@@ -1,3 +1,4 @@
+```
     _ ,                         ___               
   ,- -                         -   -_,            
  _||_                         (  ~/||             
@@ -7,7 +8,7 @@
 _-/    \\,/  \\,/ \\/\\ ,-_-  (  - \\,  \\,  \\,/ 
 
 Study timer that rewards studying with image creation
-
+```
 
 FocusArc is a program centered around rewarding and tracking hard work with something tangible, a picture. Every hour a 20x20 block is placed onto a 200x200 canvas, after 100 hours (or 40,000 pixels) the user will be done building their picture and it will be placed in their gallery. 
 
@@ -46,6 +47,3 @@ This project began as a simple study timer, but over time as more ideas came int
 
 
 Contributions are welcome! Please fork the repo and submit a pull request.
-
-
-
