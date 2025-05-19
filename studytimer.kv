@@ -1,0 +1,434 @@
+WindowManager:
+    StartWindow:
+    MainMenu:
+    TimerWindow:
+    ProfileWindow:
+    GalleryWindow:
+
+<StartWindow>:
+    name: 'Start'
+
+    FloatLayout:
+        Image:
+            source: "assets/images/start.png"
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.9, 0.9
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            spacing: dp(20)
+            padding: [0, dp(110), 0, 0]
+
+            Label:
+                text: 'Welcome back ' + root.computer_name + '! Ready for another session?'
+                font_size: 30
+                size_hint: None, None
+                pos_hint: {'center_x': 0.5, 'top': 0.75}
+                color: 0.788, 0.753, 0.722, 1
+                outline_color: (0, 0, 0, 1)
+                outline_width: 1.5
+                font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+
+            Widget:  # Blank space
+
+            Button:
+                text: 'Begin'
+                size_hint: None, None
+                size: dp(200), dp(50)
+                background_normal: 'assets/images/button_texture.png'
+                background_down: 'assets/images/button_texture_press.png'
+                pos_hint: {'center_x': 0.5}
+                font_size: '18sp'
+                color: 0.788, 0.753, 0.722, 1
+                outline_color: (0, 0, 0, 1)
+                outline_width: 1.5
+                font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+                on_release:
+                    app.root.current = 'Main'
+                    root.manager.transition.direction = 'left'
+
+<MainMenu>:
+    name: 'Main'
+
+    FloatLayout:
+        Image:
+            source: "assets/images/menu.png"
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        Label:
+            text: 'What would you like to do?'
+            size_hint: None, None
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            font_size: 30
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            size: 300, 50
+            pos_hint: {'center_x': 0.475, 'top': 0.85}
+
+        Button:
+            text: 'Back'
+            size_hint: None, None
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            font_size: '20sp'
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            size: 100, 100
+            pos_hint: {'x': 0.02, 'y': 0.03}
+            on_release: 
+                app.root.current = 'Start'
+                root.manager.transition.direction = 'right'
+
+
+        Button:
+            text: 'Study'
+            size_hint: None, None
+            size: 400, 100
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            pos_hint: {'center_x': 0.475, 'y': 0.25}
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            font_size: '20sp'
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            on_release: 
+                app.root.current = 'Timer'
+                root.manager.transition.direction = 'left'
+
+        Button:
+            text: 'Profile'
+            size_hint: None, None
+            size: 200, 50
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            pos_hint: {'x': 0.02, 'top': 0.97}
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            font_size: '20sp'
+            font_size: 16
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            on_release: 
+                app.root.current = 'Profile'
+                root.manager.transition.direction = 'up'
+
+        Button:
+            text: 'Gallery'
+            size_hint: None, None
+            size: 200, 50
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            pos_hint: {'right': 0.98, 'top': 0.97}
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            font_size: '20sp'
+            font_size: 16
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            on_release: 
+                app.root.current = 'Gallery'
+                root.manager.transition.direction = 'up'
+            
+<TimerWindow>:
+    name: 'Timer'
+
+    FloatLayout:
+        Image:
+            source: "assets/images/timer.png"
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        Button:
+            text: 'Back'
+            size_hint: None, None
+            size: 100, 100
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            pos_hint: {'x': 0.02, 'y': 0.03}
+            font_size: '20sp'
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            on_release: 
+                app.root.current = 'Main'
+                root.manager.transition.direction = 'right'
+
+        BoxLayout:
+            id: PreTimer_Elements
+            orientation: 'vertical'
+            spacing: dp(75)
+            size_hint: None, None
+            size: self.minimum_size
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+    
+            Label:
+                id: Opening_Text
+                text: 'How long would you like to study for?'
+                size_hint: None, None
+                size: 1000, 50
+                font_size: 30
+                font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+                color: 0.788, 0.753, 0.722, 1
+                outline_color: (0, 0, 0, 1)
+                outline_width: 1.5
+
+            BoxLayout:
+                id: setup_box
+                orientation: 'horizontal'
+                spacing: dp(5)
+                size_hint: None, None
+                size: self.minimum_size
+                pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+
+                TextInput:
+                    id: hours_input
+                    input_filter: 'int'
+                    hint_text: '00'
+                    max_length: 2
+                    multiline: False
+                    font_size: 125
+                    font_name: "assets/fonts/digital-7/digital-7.ttf"
+                    foreground_color: 1, 1, 1, 1
+                    background_color: 0, 0, 0, 0
+                    size_hint: None, None
+                    size: 125, 125
+                    on_text: app.valid_number_hours(self)
+                    on_text_validate: app.calculate_total_time(root.ids.hours_input, root.ids.minute_input, root.ids.seconds_input)
+
+                Label:
+                    text: ':'
+                    size_hint: None, None
+                    size: 125, 125
+                    font_name: "assets/fonts/digital-7/digital-7.ttf"
+                    font_size: 125
+                    color: 1, 1, 1, 1
+
+                TextInput:
+                    id: minute_input
+                    input_filter: 'int'
+                    hint_text: '00'
+                    font_name: "assets/fonts/digital-7/digital-7.ttf"
+                    multiline: False
+                    font_size: 125
+                    foreground_color: 1, 1, 1, 1
+                    background_color: 0, 0, 0, 0
+                    size_hint: None, None
+                    size: 125, 125
+                    on_text: on_text: app.valid_number_secnmins(self)
+                    on_text_validate: app.calculate_total_time(root.ids.hours_input, root.ids.minute_input, root.ids.seconds_input)
+
+                Label:
+                    text: ':'
+                    size_hint: None, None
+                    size: 125, 125
+                    font_size: 125
+                    font_name: "assets/fonts/digital-7/digital-7.ttf"
+                    color: 1, 1, 1, 1
+
+                TextInput:
+                    id: seconds_input
+                    input_filter: 'int'
+                    hint_text: '00'
+                    font_name: "assets/fonts/digital-7/digital-7.ttf"
+                    max_length: 2
+                    multiline: False
+                    font_size: 125
+                    foreground_color: 1, 1, 1, 1
+                    background_color: 0, 0, 0, 0
+                    size_hint: None, None
+                    size: 125, 125
+                    on_text: app.valid_number_secnmins(self)
+                    on_text_validate: app.calculate_total_time(root.ids.hours_input, root.ids.minute_input, root.ids.seconds_input)
+
+
+        Label:
+            id: countdown_display
+            opacity: 0
+            size_hint: None, None
+            size: self.texture_size
+            font_name: "assets/fonts/digital-7/digital-7.ttf"
+            font_size: 125
+            pos_hint: {'center_x': 0.5, 'center_y': 0.71}
+
+        Label:
+            id: block_countdown
+            opacity: 0
+            size_hint: None, None
+            size: self.texture_size
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            font_size: 36
+            pos_hint: {'center_x': 0.5, 'top': 0.65}
+            text: ''
+
+        BoxLayout:
+            id: pixel_canvas_container
+            opacity: 0
+            size_hint: None, None
+            size: 200, 200
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+
+            canvas.before:
+                Color:
+                    rgba: 1, 0.85, 0.5, 0.2  # Red border for testing
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height
+
+
+
+<ProfileWindow>:
+    name: 'Profile'
+
+    FloatLayout:
+        Image:
+            source: "assets/images/profile.png"
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        Button:
+            id: profile_back_button
+            text: 'Back'
+            size_hint: None, None
+            size: 100, 100
+            font_size: '20sp'
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            pos_hint: {'x': 0.02, 'y': 0.03}
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            on_release: 
+                app.root.current = 'Main'
+                root.manager.transition.direction = 'down'
+        
+        BoxLayout:
+            id: profile_elements
+            orientation: 'vertical'
+            spacing: dp(75)
+            size_hint: None, None
+            size: self.minimum_size
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            Label:
+                id: stats_title
+                size: 210, 210
+                font_name: 'assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf'
+                font_size: 36
+                halign: 'center'
+                valign: 'middle'
+                text: 'Statistics'
+
+            Label:
+                id: stats_hours
+                size_hint: None, None
+                size: 105, 105
+                font_name: 'assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf'
+                font_size: 24
+                halign: 'center'
+                valign: 'middle'
+                text_size: self.size
+                text: f'Total Hours Studied:\n{app.hours_studied}'
+
+            Label:
+                id: stats_minutes
+                size_hint: None, None
+                size: 105, 105
+                font_name: 'assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf'
+                font_size: 24
+                halign: 'center'
+                valign: 'middle'
+                text_size: self.size
+                text: f'Total Minutes Studied:\n{app.minutes_studied}'
+
+            Label:
+                id: stats_seconds
+                size_hint: None, None
+                size: 105, 105
+                font_name: 'assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf'
+                font_size: 24
+                halign: 'center'
+                valign: 'middle'
+                text_size: self.size
+                text: f'Total Seconds Studied:\n{app.seconds_studied}'
+
+<GalleryWindow>:
+    name: 'Gallery'
+    
+    FloatLayout:
+        Image:
+            source: "assets/images/gallery.png"
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        Button:
+            text: 'Back'
+            size_hint: None, None
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            font_size: '20sp'
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            size: 100, 100
+            pos_hint: {'x': 0.02, 'y': 0.03}
+            on_release: 
+                app.root.current = 'Main'
+                root.manager.transition.direction = 'down'
+
+        Button:
+            text: 'Reset Progress'
+            size_hint: None, None
+            font_name: "assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf"
+            background_normal: 'assets/images/button_texture.png'
+            background_down: 'assets/images/button_texture_press.png'
+            font_size: '30sp'
+            color: 0.788, 0.753, 0.722, 1
+            outline_color: (0, 0, 0, 1)
+            outline_width: 1.5
+            size: 200, 100
+            pos_hint: {'right': 0.98, 'top': 0.97}
+            on_release: app.reset_progress()
+
+        Label:
+            id: gallery_title
+            size_hint: None, None
+            size: 200, 200
+            font_name: 'assets/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf'
+            font_size: 36
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.90}
+            valign: 'middle'
+            text_size: self.size
+            text: 'Gallery'
+
+        ScrollView:
+            size_hint: 0.8, 0.7
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            GridLayout:
+                id: paintings
+                spacing: dp(20)
+                cols: 8
+                padding: dp(20)
+                size_hint: None, None
+                size: self.minimum_size

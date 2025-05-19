@@ -1,0 +1,35 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Backup and log files
+*.bak
+*.log
+
+# Kivy build/cache
+.kivy/
+
+# User progress and runtime data (optional)
+user_progress.json
+
+# Visual Studio / VS Code
+.vscode/
+*.pyproj
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Environment files
+.env
+.venv/
+venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
